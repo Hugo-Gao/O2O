@@ -1,0 +1,6 @@
+2017-12-05 21:41:33.263[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop (owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2017-12-05 21:41:33.353[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 1(Integer), 1(Long), 测试的店铺(String), test(String), test(String), 12341231(String), test(String), null, 2017-12-05 21:41:32.808(Timestamp), null, 1(Integer), 审核中(String)
+2017-12-05 21:41:33.616[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2017-12-05 21:59:43.620[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==>  Preparing: UPDATE tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? WHERE shop_id=? 
+2017-12-05 21:59:43.711[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述(String), 测试地址(String), 2017-12-05 21:59:43.038(Timestamp), 1(Long)
+2017-12-05 21:59:43.823[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - <==    Updates: 1
