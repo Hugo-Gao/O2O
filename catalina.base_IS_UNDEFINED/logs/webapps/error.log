@@ -1,0 +1,2 @@
+2017-12-07 21:30:42.161[main] ERROR com.gyf.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2017-12-07 21:34:44.091[main] ERROR com.gyf.o2o.util.ImageUtil - java.io.FileNotFoundException: E:\projectdev\image\upload\item\shop\3\2017120721344382148.jpg (系统找不到指定的路径。)

@@ -1,6 +1,24 @@
-2017-12-05 21:41:33.263[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop (owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
-2017-12-05 21:41:33.353[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 1(Integer), 1(Long), 测试的店铺(String), test(String), test(String), 12341231(String), test(String), null, 2017-12-05 21:41:32.808(Timestamp), null, 1(Integer), 审核中(String)
-2017-12-05 21:41:33.616[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - <==    Updates: 1
-2017-12-05 21:59:43.620[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==>  Preparing: UPDATE tb_shop SET shop_desc=?, shop_addr=?, last_edit_time=? WHERE shop_id=? 
-2017-12-05 21:59:43.711[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试描述(String), 测试地址(String), 2017-12-05 21:59:43.038(Timestamp), 1(Long)
-2017-12-05 21:59:43.823[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2017-12-07 21:30:41.398[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop (owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2017-12-07 21:30:41.484[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 1(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), 12341231(String), null, null, 2017-12-07 21:30:41.318(Timestamp), 2017-12-07 21:30:41.318(Timestamp), 0(Integer), 审核中(String)
+2017-12-07 21:30:41.684[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2017-12-07 21:30:41.695[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\2\2017120721304162671.jpg
+2017-12-07 21:30:41.696[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\\upload\item\shop\2\2017120721304162671.jpg
+2017-12-07 21:30:42.211[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? WHERE shop_id=? 
+2017-12-07 21:30:42.213[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺1(String), test1(String), test1(String), 12341231(String), \upload\item\shop\2\2017120721304162671.jpg(String), 2017-12-07 21:30:41.318(Timestamp), 0(Integer), 审核中(String), 1(Integer), 1(Long), 2(Long)
+2017-12-07 21:30:42.315[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2017-12-07 21:34:43.099[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop (owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2017-12-07 21:34:43.160[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 1(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), 12341231(String), null, null, 2017-12-07 21:34:43.066(Timestamp), 2017-12-07 21:34:43.066(Timestamp), 0(Integer), 审核中(String)
+2017-12-07 21:34:43.163[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2017-12-07 21:34:43.172[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is upload\item\shop\3\2017120721344382148.jpg
+2017-12-07 21:34:43.172[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\3\2017120721344382148.jpg
+2017-12-07 21:34:44.121[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? WHERE shop_id=? 
+2017-12-07 21:34:44.123[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺1(String), test1(String), test1(String), 12341231(String), upload\item\shop\3\2017120721344382148.jpg(String), 2017-12-07 21:34:43.066(Timestamp), 0(Integer), 审核中(String), 1(Integer), 1(Long), 3(Long)
+2017-12-07 21:34:44.207[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2017-12-07 21:37:09.368[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop (owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2017-12-07 21:37:09.416[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 1(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), 12341231(String), null, null, 2017-12-07 21:37:09.345(Timestamp), 2017-12-07 21:37:09.345(Timestamp), 0(Integer), 审核中(String)
+2017-12-07 21:37:09.419[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - <==    Updates: 1
+2017-12-07 21:37:09.431[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is upload\item\shop\4\2017120721370940573.jpg
+2017-12-07 21:37:09.431[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\4\2017120721370940573.jpg
+2017-12-07 21:37:09.745[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, last_edit_time=?, enable_status=?, advice=?, area_id=?, shop_category_id=? WHERE shop_id=? 
+2017-12-07 21:37:09.747[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==> Parameters: 测试的店铺1(String), test1(String), test1(String), 12341231(String), upload\item\shop\4\2017120721370940573.jpg(String), 2017-12-07 21:37:09.345(Timestamp), 0(Integer), 审核中(String), 1(Integer), 1(Long), 4(Long)
+2017-12-07 21:37:09.748[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - <==    Updates: 1

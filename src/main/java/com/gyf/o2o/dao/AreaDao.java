@@ -3,6 +3,7 @@ package com.gyf.o2o.dao;
 import com.gyf.o2o.entity.Area;
 
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by gaoyunfan on 2017/12/5
