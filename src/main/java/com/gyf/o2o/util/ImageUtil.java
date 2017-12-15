@@ -10,6 +10,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -50,10 +52,10 @@ public class ImageUtil
      * @param targetAddr
      * @return
      */
-    public static String generateThumbnail(File thumbnail, String targetAddr)
+    public static String generateThumbnail(InputStream thumbnail, String fileName,String targetAddr)
     {
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(thumbnail);
+        String extension = getFileExtension(fileName);
         makeDirPath(targetAddr);
         //相对路径
         String relativeAddr = targetAddr + realFileName + extension;
@@ -89,24 +91,44 @@ public class ImageUtil
 
     /**
      * 获取文件的扩展名
-     * @param cFile
+     * @param fileName
      * @return
      */
-    private static String getFileExtension(File cFile)
+    private static String getFileExtension(String fileName)
     {
-        String originalFileName = cFile.getName();
-        return originalFileName.substring(originalFileName.lastIndexOf("."));
+        return fileName.substring(fileName.lastIndexOf("."));
     }
 
     /**
      * 生成随机文件名,不能重复，当前年月日小时分钟秒钟+五位随机数
      * @return
      */
-    private static String getRandomFileName()
+    public static String getRandomFileName()
     {
         int rannum = r.nextInt(89999)+10000;
         String nowTimeStr = sDateFormat.format(new Date());
         return nowTimeStr + rannum;
+    }
+
+    /**
+     * 判断是文件的路径还是目录的路径
+     * @param storePath
+     */
+    public static void deleteFileOrPath(String storePath)
+    {
+        File fileOrPath = new File(PathUtil.getImgBasePath() + storePath);
+        if (fileOrPath.exists())
+        {
+            if (fileOrPath.isDirectory())
+            {
+                File[] files = fileOrPath.listFiles();
+                for (File file : files)
+                {
+                    file.delete();
+                }
+            }
+            fileOrPath.delete();
+        }
     }
 
     public static void main(String[] args) throws IOException
@@ -115,7 +137,6 @@ public class ImageUtil
                 .size(200, 200)
                 .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "/watermark.jpg")), 0.25f)
                 .outputQuality(0.8f).toFile("C:\\Users\\Lenovo\\Desktop\\targetimgnew.jpg");
-
 
     }
 }

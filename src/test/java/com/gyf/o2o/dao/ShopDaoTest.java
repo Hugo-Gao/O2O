@@ -5,11 +5,13 @@ import com.gyf.o2o.entity.Area;
 import com.gyf.o2o.entity.PersonInfo;
 import com.gyf.o2o.entity.Shop;
 import com.gyf.o2o.entity.ShopCategory;
+import org.apache.ibatis.annotations.Param;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -49,6 +51,7 @@ public class ShopDaoTest extends BaseTest
     }
 
     @Test
+    @Ignore
     public void testUpdateShop()
     {
         Shop shop = new Shop();
@@ -58,5 +61,35 @@ public class ShopDaoTest extends BaseTest
         shop.setLastEditTime(new Date());
         int effectedNum = shopDao.updateShop(shop);
         assertEquals(1, effectedNum);
+    }
+
+    @Test
+    public void queryByShopId()
+    {
+        long shopId = 1L;
+        Shop shop = shopDao.queryByShopId(shopId);
+        System.out.println(shop.getArea().getAreaId());
+        System.out.println(shop.getArea().getAreaName());
+
+    }
+    @Test
+    public void testQueryShopListAndCount()
+    {
+        Shop shopCondition = new Shop();
+        PersonInfo owner = new PersonInfo();
+        owner.setUserId(1L);
+        shopCondition.setOwner(owner);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition, 0, 5);
+        assertEquals(shopList.size(),5);
+        int i = shopDao.queryShopCount(shopCondition);
+        assertEquals(i,5);
+        ShopCategory sc = new ShopCategory();
+        sc.setShopCategoryId(1L);
+        shopCondition.setShopCategory(sc);
+        shopList = shopDao.queryShopList(shopCondition, 0, 2);
+        assertEquals(shopList.size(),2);
+        i = shopDao.queryShopCount(shopCondition);
+        assertEquals(i,4);
+
     }
 }
