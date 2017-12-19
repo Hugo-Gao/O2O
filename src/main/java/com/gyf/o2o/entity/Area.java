@@ -1,6 +1,7 @@
 package com.gyf.o2o.entity;
 
 import java.util.Date;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * Created by gaoyunfan on 2017/11/28
@@ -66,4 +67,5 @@ public class Area
     {
         this.lastEditTime = lastEditTime;
     }
+
 }

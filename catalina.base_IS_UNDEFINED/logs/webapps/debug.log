@@ -1,31 +1,6 @@
-2017-12-15 18:48:06.910[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.user_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2017-12-15 18:48:06.979[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
-2017-12-15 18:50:25.390[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.user_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2017-12-15 18:50:25.443[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
-2017-12-15 18:50:55.449[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2017-12-15 18:50:55.508[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
-2017-12-15 18:50:55.579[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - <==      Total: 5
-2017-12-15 18:51:50.037[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2017-12-15 18:51:50.076[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
-2017-12-15 18:51:50.105[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - <==      Total: 5
-2017-12-15 18:51:50.112[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT COUNT(1) FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
-2017-12-15 18:51:50.112[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
-2017-12-15 18:51:50.148[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2017-12-15 18:53:54.028[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2017-12-15 18:53:54.080[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 5(Integer)
-2017-12-15 18:53:54.104[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - <==      Total: 5
-2017-12-15 18:53:54.112[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT COUNT(1) FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
-2017-12-15 18:53:54.113[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
-2017-12-15 18:53:54.115[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2017-12-15 18:53:54.116[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2017-12-15 18:53:54.117[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 1(Long), 0(Integer), 2(Integer)
-2017-12-15 18:53:54.127[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - <==      Total: 2
-2017-12-15 18:53:54.128[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT COUNT(1) FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id = ? and s.owner_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
-2017-12-15 18:53:54.129[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long), 1(Long)
-2017-12-15 18:53:54.130[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
-2017-12-15 21:09:07.756[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
-2017-12-15 21:09:07.787[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 2(Integer)
-2017-12-15 21:09:07.833[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - <==      Total: 2
-2017-12-15 21:09:07.855[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT COUNT(1) FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
-2017-12-15 21:09:07.855[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
-2017-12-15 21:09:07.859[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2017-12-18 16:31:45.544[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? 
+2017-12-18 16:31:45.634[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==> Parameters: 1(Integer)
+2017-12-18 16:31:45.653[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - <==      Total: 3
+2017-12-18 21:24:53.650[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? 
+2017-12-18 21:24:53.705[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==> Parameters: 1(Long)
+2017-12-18 21:24:53.734[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - <==      Total: 3
