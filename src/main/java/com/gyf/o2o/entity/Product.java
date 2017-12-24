@@ -17,7 +17,7 @@ public class Product
     private Integer priority;
     private Date createTime;
     private Date lastEditTime;
-    private Integer enableStatus;
+    private Integer enableStatus;//0下架,1在前端展示系统展示
     private List<ProductImg> productImgList;
     private ProductCategory productCategory;
     private Shop shop;

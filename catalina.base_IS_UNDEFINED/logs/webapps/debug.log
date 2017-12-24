@@ -1,6 +1,21 @@
-2017-12-18 16:31:45.544[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? 
-2017-12-18 16:31:45.634[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==> Parameters: 1(Integer)
-2017-12-18 16:31:45.653[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - <==      Total: 3
-2017-12-18 21:24:53.650[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? 
-2017-12-18 21:24:53.705[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==> Parameters: 1(Long)
-2017-12-18 21:24:53.734[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - <==      Total: 3
+2017-12-24 10:29:20.689[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product ORDER BY priority DESC LIMIT ?,?; 
+2017-12-24 10:29:20.774[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2017-12-24 10:29:20.823[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - <==      Total: 3
+2017-12-24 10:29:20.877[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product 
+2017-12-24 10:29:20.878[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 
+2017-12-24 10:29:20.879[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
+2017-12-24 10:29:20.881[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE product_name like '%测试%' ORDER BY priority DESC LIMIT ?,?; 
+2017-12-24 10:29:20.882[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2017-12-24 10:29:20.886[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - <==      Total: 3
+2017-12-24 10:29:20.887[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product WHERE product_name like '%测试%' 
+2017-12-24 10:29:20.887[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 
+2017-12-24 10:29:20.888[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
+2017-12-24 16:35:48.103[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id=NULL WHERE product_category_id=7 
+2017-12-24 16:35:48.144[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 
+2017-12-24 16:35:48.187[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1
+2017-12-24 16:36:34.255[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id=NULL WHERE product_category_id=7 
+2017-12-24 16:36:34.291[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 
+2017-12-24 16:36:34.351[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1
+2017-12-24 16:37:58.436[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id=NULL WHERE product_category_id=7 
+2017-12-24 16:37:58.473[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 
+2017-12-24 16:37:58.513[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1

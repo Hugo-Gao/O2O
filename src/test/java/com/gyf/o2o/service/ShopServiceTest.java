@@ -1,6 +1,7 @@
 package com.gyf.o2o.service;
 
 import com.gyf.o2o.BaseTest;
+import com.gyf.o2o.dto.ImageHolder;
 import com.gyf.o2o.dto.ShopExecution;
 import com.gyf.o2o.entity.Area;
 import com.gyf.o2o.entity.PersonInfo;
@@ -65,7 +66,8 @@ public class ShopServiceTest extends BaseTest
         shop.setAdvice("审核中");
         File shopImg = new File("C:\\Users\\Lenovo\\Desktop\\image\\watermark.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.addShop(shop, is,shopImg.getName());
+        ImageHolder imageHolder = new ImageHolder( shopImg.getName(),is);
+        ShopExecution shopExecution = shopService.addShop(shop, imageHolder);
         assertEquals(ShopStateEnum.CHECK.getState(),shopExecution.getState());
     }
     @Test
@@ -76,7 +78,8 @@ public class ShopServiceTest extends BaseTest
         shop.setShopName("修改后的店铺名称"+shop.getShopName());
         File shopImg = new File("C:\\Users\\Lenovo\\Desktop\\image\\dabai.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, is, "dabai.jpg");
+        ImageHolder imageHolder = new ImageHolder( "dabai.jpg",is);
+        ShopExecution shopExecution = shopService.modifyShop(shop, imageHolder);
         System.out.println("新的图片地址"+shopExecution.getShop().getShopImg());
     }
 

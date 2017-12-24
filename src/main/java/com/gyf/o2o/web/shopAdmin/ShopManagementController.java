@@ -1,6 +1,7 @@
 package com.gyf.o2o.web.shopAdmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.gyf.o2o.dto.ImageHolder;
 import com.gyf.o2o.dto.ShopExecution;
 import com.gyf.o2o.entity.*;
 import com.gyf.o2o.enums.ShopStateEnum;
@@ -45,23 +46,7 @@ public class ShopManagementController
 
     @Autowired
     private ProductCategoryService productCategoryService;
-    @RequestMapping(value = "/getproductcategorylist", method = RequestMethod.GET)
-    @ResponseBody
-    private Map<String, Object> getProductCategoryList(HttpServletRequest request)
-    {
-        Map<String, Object> modelMap = new HashMap<>();
-        long shopId = HttpServletRequestUtil.getLong(request, "shopId");
-        if (shopId > 0)
-        {
-            List<ProductCategory> productCategoryList = productCategoryService.getProductCategoryList(shopId);
-            modelMap.put("success", true);
-            modelMap.put("productCategoryList", productCategoryList);
-        }else {
-            modelMap.put("success", false);
-            modelMap.put("errMsg","shopId错误!");
-        }
-        return modelMap;
-    }
+
 
     @RequestMapping(value = "/getshopmanagementinfo", method = RequestMethod.GET)
     @ResponseBody
@@ -204,7 +189,8 @@ public class ShopManagementController
             shop.setOwner(owner);
             ShopExecution se;
             try {
-                se = shopService.addShop(shop, shopImg.getInputStream(),shopImg.getOriginalFilename());
+                ImageHolder imageHolder = new ImageHolder( shopImg.getOriginalFilename(),shopImg.getInputStream());
+                se = shopService.addShop(shop, imageHolder);
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
                     // 该用户可以操作的店铺列表
@@ -266,9 +252,10 @@ public class ShopManagementController
             ShopExecution se;
             try {
                 if (shopImg == null) {
-                    se = shopService.modifyShop(shop, null,null);
+                    se = shopService.modifyShop(shop, null);
                 } else {
-                    se = shopService.modifyShop(shop, shopImg.getInputStream(),shopImg.getOriginalFilename());
+                    ImageHolder imageHolder = new ImageHolder( shopImg.getOriginalFilename(),shopImg.getInputStream());
+                    se = shopService.modifyShop(shop, imageHolder);
                 }
                 if (se.getState() == ShopStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);
