@@ -3,6 +3,7 @@ package com.gyf.o2o.service;
 import com.gyf.o2o.dto.ImageHolder;
 import com.gyf.o2o.dto.ProductExecution;
 import com.gyf.o2o.entity.Product;
+import com.gyf.o2o.entity.ProductImg;
 import com.gyf.o2o.exceptions.ProductOperationException;
 
 import java.io.InputStream;
@@ -44,10 +45,18 @@ public interface ProductService
 
     /**
      * 修改商品信息以及图片处理
+     *
      * @param product
      * @param thumbnail
      * @param productImgHolderList
      * @return
      */
     ProductExecution modifyProduct(Product product, ImageHolder thumbnail, List<ImageHolder> productImgHolderList) throws ProductOperationException;
+
+    /**
+     * 获取指定id的缩略图列表
+     * @param productId
+     * @return
+     */
+    List<ProductImg> getProductImgListById(long productId);
 }

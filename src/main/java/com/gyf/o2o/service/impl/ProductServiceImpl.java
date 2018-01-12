@@ -185,4 +185,19 @@ public class ProductServiceImpl implements ProductService
         String thumbnailAddr = ImageUtil.generateThumbnail(thumbnail, dest);
         product.setImgAddr(thumbnailAddr);
     }
+
+    /**
+     * 获取指定商品的id
+     * @param productId
+     * @return
+     */
+    public List<ProductImg> getProductImgListById(long productId)
+    {
+        List<ProductImg> productImgList=null;
+        if(productId>0)
+        {
+            productImgList = productImgDao.queryProductImgList(productId);
+        }
+        return productImgList;
+    }
 }

@@ -1,21 +1,121 @@
-2017-12-24 10:29:20.689[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product ORDER BY priority DESC LIMIT ?,?; 
-2017-12-24 10:29:20.774[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
-2017-12-24 10:29:20.823[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - <==      Total: 3
-2017-12-24 10:29:20.877[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product 
-2017-12-24 10:29:20.878[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 
-2017-12-24 10:29:20.879[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
-2017-12-24 10:29:20.881[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE product_name like '%娴嬭瘯%' ORDER BY priority DESC LIMIT ?,?; 
-2017-12-24 10:29:20.882[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
-2017-12-24 10:29:20.886[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - <==      Total: 3
-2017-12-24 10:29:20.887[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product WHERE product_name like '%娴嬭瘯%' 
-2017-12-24 10:29:20.887[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 
-2017-12-24 10:29:20.888[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
-2017-12-24 16:35:48.103[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id=NULL WHERE product_category_id=7 
-2017-12-24 16:35:48.144[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 
-2017-12-24 16:35:48.187[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1
-2017-12-24 16:36:34.255[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id=NULL WHERE product_category_id=7 
-2017-12-24 16:36:34.291[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 
-2017-12-24 16:36:34.351[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1
-2017-12-24 16:37:58.436[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id=NULL WHERE product_category_id=7 
-2017-12-24 16:37:58.473[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 
-2017-12-24 16:37:58.513[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 1
+2018-01-12 16:08:25.952[main] DEBUG com.gyf.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id,area_name,priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
+2018-01-12 16:08:26.010[main] DEBUG com.gyf.o2o.dao.AreaDao.queryArea - ==> Parameters: 
+2018-01-12 16:08:26.089[main] DEBUG com.gyf.o2o.dao.AreaDao.queryArea - <==      Total: 2
+2018-01-12 16:08:26.146[main] DEBUG com.gyf.o2o.dao.HeadLineDao.queryHeadLine - ==>  Preparing: SELECT line_id, line_name, line_link, line_img, priority, enable_status, create_time, last_edit_time FROM tb_head_line order by priority DESC 
+2018-01-12 16:08:26.146[main] DEBUG com.gyf.o2o.dao.HeadLineDao.queryHeadLine - ==> Parameters: 
+2018-01-12 16:08:26.150[main] DEBUG com.gyf.o2o.dao.HeadLineDao.queryHeadLine - <==      Total: 4
+2018-01-12 16:08:26.174[main] DEBUG c.g.o.d.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category (product_category_name, priority, create_time, shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
+2018-01-12 16:08:26.185[main] DEBUG c.g.o.d.P.batchInsertProductCategory - ==> Parameters: 商品类别1(String), 1(Integer), 2018-01-12 16:08:26.166(Timestamp), 1(Long), 商品类别2(String), 2(Integer), 2018-01-12 16:08:26.166(Timestamp), 1(Long)
+2018-01-12 16:08:26.346[main] DEBUG c.g.o.d.P.batchInsertProductCategory - <==    Updates: 2
+2018-01-12 16:08:26.348[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
+2018-01-12 16:08:26.349[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==> Parameters: 1(Long)
+2018-01-12 16:08:26.351[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - <==      Total: 2
+2018-01-12 16:08:26.367[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==>  Preparing: SELECT product_category_id, product_category_name, priority, create_time, shop_id FROM tb_product_category WHERE shop_id=? ORDER BY priority DESC 
+2018-01-12 16:08:26.369[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - ==> Parameters: 1(Long)
+2018-01-12 16:08:26.395[main] DEBUG c.g.o.d.P.queryProductCategoryByShopId - <==      Total: 2
+2018-01-12 16:08:26.401[main] DEBUG c.g.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE shop_id=? AND product_category_id=? 
+2018-01-12 16:08:26.402[main] DEBUG c.g.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 11(Long)
+2018-01-12 16:08:26.468[main] DEBUG c.g.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2018-01-12 16:08:26.469[main] DEBUG c.g.o.dao.ProductCategoryDao.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE shop_id=? AND product_category_id=? 
+2018-01-12 16:08:26.469[main] DEBUG c.g.o.dao.ProductCategoryDao.deleteProductCategory - ==> Parameters: 1(Long), 10(Long)
+2018-01-12 16:08:26.631[main] DEBUG c.g.o.dao.ProductCategoryDao.deleteProductCategory - <==    Updates: 1
+2018-01-12 16:08:26.643[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product (product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,? ) 
+2018-01-12 16:08:26.646[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试1(String), 测试DESC1(String), test1(String), null, null, 1(Integer), 2018-01-12 16:08:26.643(Timestamp), 2018-01-12 16:08:26.643(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-01-12 16:08:26.712[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-01-12 16:08:26.713[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product (product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,? ) 
+2018-01-12 16:08:26.714[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试2(String), 测试DESC2(String), test2(String), null, null, 2(Integer), 2018-01-12 16:08:26.643(Timestamp), 2018-01-12 16:08:26.643(Timestamp), 0(Integer), 1(Long), 1(Long)
+2018-01-12 16:08:26.777[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-01-12 16:08:26.777[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product (product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,? ) 
+2018-01-12 16:08:26.778[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==> Parameters: test3(String), 测试DESC3(String), test3(String), null, null, 3(Integer), 2018-01-12 16:08:26.643(Timestamp), 2018-01-12 16:08:26.643(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-01-12 16:08:26.812[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-01-12 16:08:26.816[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product ORDER BY priority DESC LIMIT ?,?; 
+2018-01-12 16:08:26.816[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2018-01-12 16:08:26.821[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductList - <==      Total: 3
+2018-01-12 16:08:26.822[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==>  Preparing: SELECT count(1) FROM tb_product 
+2018-01-12 16:08:26.822[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - ==> Parameters: 
+2018-01-12 16:08:26.823[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductCount - <==      Total: 1
+2018-01-12 16:08:26.826[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id=pm.product_id WHERE p.product_id=? ORDER BY pm.priority DESC 
+2018-01-12 16:08:26.826[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductById - ==> Parameters: 5(Long)
+2018-01-12 16:08:26.830[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductById - <==      Total: 2
+2018-01-12 16:08:26.834[main] DEBUG com.gyf.o2o.dao.ProductDao.updateProduct - ==>  Preparing: UPDATE tb_product SET product_name=?, product_category_id=? WHERE product_id=? AND shop_id=? 
+2018-01-12 16:08:26.836[main] DEBUG com.gyf.o2o.dao.ProductDao.updateProduct - ==> Parameters: 第一个产品(String), 2(Long), 1(Long), 1(Long)
+2018-01-12 16:08:26.840[main] DEBUG com.gyf.o2o.dao.ProductDao.updateProduct - <==    Updates: 0
+2018-01-12 16:08:26.849[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==>  Preparing: UPDATE tb_product SET product_category_id=NULL WHERE product_category_id=7 
+2018-01-12 16:08:26.851[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - ==> Parameters: 
+2018-01-12 16:08:26.879[main] DEBUG c.g.o2o.dao.ProductDao.updateProductCategoryToNull - <==    Updates: 0
+2018-01-12 16:08:26.893[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img(img_addr, img_desc, priority,create_time, product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-01-12 16:08:26.896[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: 图片1(String), 测试图片1(String), 1(Integer), 2018-01-12 16:08:26.89(Timestamp), 1(Long), 图片2(String), null, 1(Integer), 2018-01-12 16:08:26.89(Timestamp), 1(Long)
+2018-01-12 16:08:26.945[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-01-12 16:08:26.949[main] DEBUG com.gyf.o2o.dao.ProductImgDao.queryProductImgList - ==>  Preparing: SELECT product_img_id,img_addr,img_desc,priority,create_time,product_id FROM tb_product_img WHERE product_id=? 
+2018-01-12 16:08:26.950[main] DEBUG com.gyf.o2o.dao.ProductImgDao.queryProductImgList - ==> Parameters: 5(Long)
+2018-01-12 16:08:26.956[main] DEBUG com.gyf.o2o.dao.ProductImgDao.queryProductImgList - <==      Total: 2
+2018-01-12 16:08:26.958[main] DEBUG c.g.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: DELETE FROM tb_product_img WHERE product_id=? 
+2018-01-12 16:08:26.959[main] DEBUG c.g.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 1(Long)
+2018-01-12 16:08:26.989[main] DEBUG c.g.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 4
+2018-01-12 16:08:27.002[main] DEBUG com.gyf.o2o.dao.ShopCategoryDao.queryShopCategory - ==>  Preparing: SELECT shop_category_id, shop_category_name, shop_category_desc, shop_category_img, priority, create_time, last_edit_time, parent_id FROM tb_shop_category WHERE parent_id is null ORDER BY priority DESC 
+2018-01-12 16:08:27.002[main] DEBUG com.gyf.o2o.dao.ShopCategoryDao.queryShopCategory - ==> Parameters: 
+2018-01-12 16:08:27.006[main] DEBUG com.gyf.o2o.dao.ShopCategoryDao.queryShopCategory - <==      Total: 6
+2018-01-12 16:08:27.021[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id AND s.shop_id=? 
+2018-01-12 16:08:27.021[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 1(Long)
+2018-01-12 16:08:27.024[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2018-01-12 16:08:27.037[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id in (select shop_category_id from tb_shop_category WHERE parent_id=?) AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2018-01-12 16:08:27.038[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 12(Long), 0(Integer), 3(Integer)
+2018-01-12 16:08:27.085[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - <==      Total: 3
+2018-01-12 16:08:27.086[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT COUNT(1) FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id in (select shop_category_id from tb_shop_category WHERE parent_id=?) AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-01-12 16:08:27.093[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 12(Long)
+2018-01-12 16:08:27.104[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - <==      Total: 1
+2018-01-12 16:08:27.120[main] DEBUG com.gyf.o2o.dao.AreaDao.queryArea - ==>  Preparing: SELECT area_id,area_name,priority,create_time,last_edit_time FROM tb_area ORDER BY priority DESC 
+2018-01-12 16:08:27.121[main] DEBUG com.gyf.o2o.dao.AreaDao.queryArea - ==> Parameters: 
+2018-01-12 16:08:27.123[main] DEBUG com.gyf.o2o.dao.AreaDao.queryArea - <==      Total: 2
+2018-01-12 16:08:27.143[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr AS detail_img, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id=pm.product_id WHERE p.product_id=? ORDER BY pm.priority DESC 
+2018-01-12 16:08:27.143[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductById - ==> Parameters: 1(Long)
+2018-01-12 16:08:27.149[main] DEBUG com.gyf.o2o.dao.ProductDao.queryProductById - <==      Total: 1
+2018-01-12 16:08:27.168[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\1\2018011216082751892.jpg
+2018-01-12 16:08:27.169[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\1\2018011216082751892.jpg
+2018-01-12 16:08:28.552[main] DEBUG com.gyf.o2o.dao.ProductImgDao.queryProductImgList - ==>  Preparing: SELECT product_img_id,img_addr,img_desc,priority,create_time,product_id FROM tb_product_img WHERE product_id=? 
+2018-01-12 16:08:28.552[main] DEBUG com.gyf.o2o.dao.ProductImgDao.queryProductImgList - ==> Parameters: 1(Long)
+2018-01-12 16:08:28.553[main] DEBUG com.gyf.o2o.dao.ProductImgDao.queryProductImgList - <==      Total: 0
+2018-01-12 16:08:28.553[main] DEBUG c.g.o.d.ProductImgDao.deleteProductImgByProductId - ==>  Preparing: DELETE FROM tb_product_img WHERE product_id=? 
+2018-01-12 16:08:28.553[main] DEBUG c.g.o.d.ProductImgDao.deleteProductImgByProductId - ==> Parameters: 1(Long)
+2018-01-12 16:08:28.554[main] DEBUG c.g.o.d.ProductImgDao.deleteProductImgByProductId - <==    Updates: 0
+2018-01-12 16:08:28.555[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\1\2018011216082880499.jpg
+2018-01-12 16:08:28.555[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\1\2018011216082880499.jpg
+2018-01-12 16:08:28.785[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\1\2018011216082850687.jpg
+2018-01-12 16:08:28.785[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\1\2018011216082850687.jpg
+2018-01-12 16:08:28.954[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img(img_addr, img_desc, priority,create_time, product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-01-12 16:08:28.955[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: \upload\item\shop\1\2018011216082880499.jpg(String), null, null, 2018-01-12 16:08:28.784(Timestamp), 1(Long), \upload\item\shop\1\2018011216082850687.jpg(String), null, null, 2018-01-12 16:08:28.953(Timestamp), 1(Long)
+2018-01-12 16:08:29.014[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-01-12 16:08:29.016[main] DEBUG com.gyf.o2o.dao.ProductDao.updateProduct - ==>  Preparing: UPDATE tb_product SET product_name=?, product_desc=?, img_addr=?, last_edit_time=?, product_category_id=? WHERE product_id=? AND shop_id=? 
+2018-01-12 16:08:29.017[main] DEBUG com.gyf.o2o.dao.ProductDao.updateProduct - ==> Parameters: 正式的商品(String), 正式的商品(String), \upload\item\shop\1\2018011216082751892.jpg(String), 2018-01-12 16:08:27.142(Timestamp), 1(Long), 1(Long), 1(Long)
+2018-01-12 16:08:29.018[main] DEBUG com.gyf.o2o.dao.ProductDao.updateProduct - <==    Updates: 0
+2018-01-12 16:08:29.058[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\1\2018011216082987538.jpg
+2018-01-12 16:08:29.058[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\1\2018011216082987538.jpg
+2018-01-12 16:08:29.080[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==>  Preparing: INSERT INTO tb_product (product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id) VALUES (?,?,?, ?,?,?, ?,?,?, ?,? ) 
+2018-01-12 16:08:29.081[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - ==> Parameters: 测试商品1(String), 测试商品1(String), \upload\item\shop\1\2018011216082987538.jpg(String), null, null, 20(Integer), 2018-01-12 16:08:29.058(Timestamp), 2018-01-12 16:08:29.058(Timestamp), 1(Integer), 1(Long), 1(Long)
+2018-01-12 16:08:29.083[main] DEBUG com.gyf.o2o.dao.ProductDao.insertProduct - <==    Updates: 1
+2018-01-12 16:08:29.084[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\1\2018011216082929824.jpg
+2018-01-12 16:08:29.084[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\1\2018011216082929824.jpg
+2018-01-12 16:08:29.105[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\1\2018011216082977208.jpg
+2018-01-12 16:08:29.105[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\1\2018011216082977208.jpg
+2018-01-12 16:08:29.144[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img(img_addr, img_desc, priority,create_time, product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2018-01-12 16:08:29.145[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - ==> Parameters: \upload\item\shop\1\2018011216082929824.jpg(String), null, null, 2018-01-12 16:08:29.105(Timestamp), 16(Long), \upload\item\shop\1\2018011216082977208.jpg(String), null, null, 2018-01-12 16:08:29.144(Timestamp), 16(Long)
+2018-01-12 16:08:29.146[main] DEBUG c.gyf.o2o.dao.ProductImgDao.batchInsertProductImg - <==    Updates: 2
+2018-01-12 16:08:29.266[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==>  Preparing: INSERT INTO tb_shop (owner_id, area_id, shop_category_id, shop_name, shop_desc, shop_addr, phone, shop_img, priority, create_time, last_edit_time, enable_status, advice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) 
+2018-01-12 16:08:29.268[main] DEBUG com.gyf.o2o.dao.ShopDao.insertShop - ==> Parameters: 1(Long), 1(Integer), 1(Long), 测试的店铺3(String), test3(String), test3(String), 12341231(String), null, null, 2018-01-12 16:08:29.265(Timestamp), 2018-01-12 16:08:29.265(Timestamp), 0(Integer), 审核中(String)
+2018-01-12 16:08:29.571[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id AND s.shop_id=? 
+2018-01-12 16:08:29.572[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 1(Long)
+2018-01-12 16:08:29.577[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2018-01-12 16:08:29.578[main] DEBUG com.gyf.o2o.util.ImageUtil - current relativeAddr is \upload\item\shop\1\2018011216082931848.jpg
+2018-01-12 16:08:29.579[main] DEBUG com.gyf.o2o.util.ImageUtil - current complete Addr is E:\projectdev\image\upload\item\shop\1\2018011216082931848.jpg
+2018-01-12 16:08:29.606[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==>  Preparing: UPDATE tb_shop SET shop_name=?, shop_img=?, last_edit_time=? WHERE shop_id=? 
+2018-01-12 16:08:29.607[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - ==> Parameters: 修改后的店铺名称null(String), \upload\item\shop\1\2018011216082931848.jpg(String), 2018-01-12 16:08:29.604(Timestamp), 1(Long)
+2018-01-12 16:08:29.656[main] DEBUG com.gyf.o2o.dao.ShopDao.updateShop - <==    Updates: 1
+2018-01-12 16:08:29.657[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id AND s.shop_id=? 
+2018-01-12 16:08:29.657[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - ==> Parameters: 1(Long)
+2018-01-12 16:08:29.736[main] DEBUG com.gyf.o2o.dao.ShopDao.queryByShopId - <==      Total: 1
+2018-01-12 16:08:29.746[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.create_time, s.last_edit_time, s.enable_status, s.advice, a.area_id, a.area_name, sc.shop_category_id, sc.shop_category_name FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority DESC LIMIT ?,? 
+2018-01-12 16:08:29.747[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - ==> Parameters: 1(Long), 0(Integer), 2(Integer)
+2018-01-12 16:08:29.748[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopList - <==      Total: 0
+2018-01-12 16:08:29.751[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==>  Preparing: SELECT COUNT(1) FROM tb_shop s,tb_shop_category sc,tb_area a WHERE s.shop_category_id = ? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id 
+2018-01-12 16:08:29.751[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - ==> Parameters: 1(Long)
+2018-01-12 16:08:29.752[main] DEBUG com.gyf.o2o.dao.ShopDao.queryShopCount - <==      Total: 1

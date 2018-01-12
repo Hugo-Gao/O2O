@@ -9,5 +9,10 @@ import java.util.List;
  **/
 public interface ShopCategoryService
 {
+    /**
+     * 根据查询条件查询
+     * @param shopCategoryCondition
+     * @return
+     */
     List<ShopCategory> getShopCategoryList(ShopCategory shopCategoryCondition);
 }
