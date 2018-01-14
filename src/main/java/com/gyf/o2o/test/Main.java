@@ -13,9 +13,31 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  **/
 public class Main
 {
-    public static void main(String[] args)
+    public static void main(String[] args) throws InterruptedException
     {
-        ReadWriteLock readWriteLock = new ReentrantReadWriteLock();
+        Thread one =new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                System.out.println("one start");
+            }
+        });
 
+        Thread two=new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                System.out.println("two start");
+            }
+        });
+
+        one.start();
+        two.start();
+        System.out.println("this is main");
+//        one.join();
+//        two.join();
+        System.out.println("main finish");
     }
 }

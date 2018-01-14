@@ -10,11 +10,14 @@ import java.util.List;
  **/
 public interface HeadLineService
 {
+
+    public static final String HLLISTKEY = "headlinelist";
+
     /**
      * 根据条件查询HeadLine
      * @param headLineCondition
      * @return
      * @throws IOException
      */
-    List<HeadLine> getHeadLineList(HeadLine headLineCondition) throws IOException;
+    List<HeadLine> getHeadLineList(HeadLine headLineCondition) ;
 }

@@ -2,6 +2,8 @@
   <dictionary name="Lenovo">
     <words>
       <w>addr</w>
+      <w>jedis</w>
+      <w>wriper</w>
     </words>
   </dictionary>
 </component>

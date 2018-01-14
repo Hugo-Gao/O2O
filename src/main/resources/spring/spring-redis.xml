@@ -1,0 +1,38 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--Redis连接池-->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="${redis.pool.maxActive}"/>
+        <property name="maxIdle" value="${redis.pool.maxIdle}"/>
+        <property name="maxWaitMillis" value="${redis.pool.maxWait}"/>
+        <property name="testOnBorrow" value="${redis.pool.testOnBorrow}"/>
+    </bean>
+
+    <bean id="jedisWritePool" class="com.gyf.o2o.cache.JedisPoolWriper"
+          depends-on="jedisPoolConfig">
+        <constructor-arg index="0" ref="jedisPoolConfig"/>
+        <constructor-arg index="1" value="${redis.hostname}"/>
+        <constructor-arg index="2" value="${redis.port}" type="int"/>
+    </bean>
+
+    <bean id="jedisUtil" class="com.gyf.o2o.cache.JedisUtil"
+          scope="singleton">
+        <property name="jedisPool">
+            <ref bean="jedisWritePool" />
+        </property>
+    </bean>
+
+    <bean id="jedisKeys" class="com.gyf.o2o.cache.JedisUtil$Keys"
+          scope="singleton">
+        <constructor-arg ref="jedisUtil"></constructor-arg>
+    </bean>
+
+    <bean id="jedisStrings" class="com.gyf.o2o.cache.JedisUtil$Strings"
+          scope="singleton">
+        <constructor-arg ref="jedisUtil"></constructor-arg>
+    </bean>
+</beans>

@@ -9,5 +9,7 @@ import java.util.List;
  **/
 public interface AreaService
 {
+    public final static String AREALISTKEY = "arealist";
+
     List<Area> getAreaList();
 }

@@ -82,9 +82,10 @@ public class ShopManagementController
     {
         Map<String, Object> modelMap = new HashMap<>();
         PersonInfo user = new PersonInfo();
-        user.setUserId(1L);
-        user.setName("Test");
-        request.getSession().setAttribute("user", user);
+        //user.setUserId(1L);
+        //user.setName("test");
+        //user.setEnableStatus(1);
+        //request.getSession().setAttribute("user", user);
         user = (PersonInfo) request.getSession().getAttribute("user");
         try
         {
@@ -93,6 +94,7 @@ public class ShopManagementController
             ShopExecution se = shopService.getShopList(shopCondition, 0, 100);
             modelMap.put("success", true);
             modelMap.put("shopList", se.getShopList());
+            request.getSession().setAttribute("shopList", se.getShopList());
             modelMap.put("user", user);
         } catch (Exception e)
         {
